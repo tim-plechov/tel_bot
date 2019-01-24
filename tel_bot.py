@@ -9,8 +9,8 @@ from time import sleep
 import datetime
 
 
-search = "http://1001mem.ru/search?q="
-
+search, user_id, token = open("config").read().split()
+url = 'https://api.telegram.org/' + token
 
 def send_img(chat_id, link, url):
     if link == -1:
@@ -119,7 +119,7 @@ def main():
     now = datetime.datetime.now()
     day = now.day
     right_hour = 12
-    url, new_offset, day1 = map(int, open('serv.txt').read().split())
+    new_offset, day1 = map(int, open('serv.txt').read().split())
     if day1 == day:
         day += 1
     chat_id_list = list(map(int, open('chat_id_list.txt').read().split()))

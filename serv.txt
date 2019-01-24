@@ -1,1 +1,1 @@
-your url with token, new_offset, day1
+write your offset and last day of Hola!
